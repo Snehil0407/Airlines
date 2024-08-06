@@ -1,0 +1,95 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header {
+    height: 100vh;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.hero-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+.about-us {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.about-us h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.cta-section {
+    background-color: #007bff;
+    color: white;
+    padding: 60px 0;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+}
+
+.cta-section .btn {
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: #343a40;
+}
+
+footer p {
+    margin: 0;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 600px; /* Set a fixed height */
+    object-fit: cover; /* Ensures images cover the entire area */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px;
+}
+

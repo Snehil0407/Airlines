@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers - Airline Reservation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .offers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .offer-item {
+            flex: 1 1 calc(25% - 40px);
+            box-sizing: border-box;
+            text-align: center;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .offer-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .offer-item p {
+            padding: 15px;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .offer-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            margin-top: 40px;
+        }
+        .navbar-nav .nav-link {
+            font-size: 1.1em;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="logo.svg" alt="SVG Image" width="50" height="50"> Airline Express</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reservation.html"><i class="fa-solid fa-calendar-check"></i> Reservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="map.html"><i class="fas fa-map-marker-alt"></i> Map</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="offers.html"><i class="fas fa-tags"></i> Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html"><i class="fas fa-user-shield"></i> Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Special Offers</h2>
+            <div class="offers">
+                <div class="offer-item">
+                    <img src="offer1.jpg" alt="Offer 1">
+                    <p>50% off to New York</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#offer1Modal">Learn More</button>
+                </div>
+                <div class="offer-item">
+                    <img src="offer2.jpg" alt="Offer 2">
+                    <p>Buy one get one free to London</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#offer2Modal">Learn More</button>
+                </div>
+                <div class="offer-item">
+                    <img src="offer3.jpg" alt="Offer 3">
+                    <p>30% off to Paris</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#offer3Modal">Learn More</button>
+                </div>
+                <div class="offer-item">
+                    <img src="offer4.jpg" alt="Offer 4">
+                    <p>20% off to Tokyo</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#offer4Modal">Learn More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Airline Reservation System. All rights reserved.</p>
+        <p>Contact us: snehil@gmail.com | Follow us on social media</p>
+        <p>
+            <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </p>
+    </footer>
+
+    <!-- Offer Modals -->
+    <div class="modal fade" id="offer1Modal" tabindex="-1" aria-labelledby="offer1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="offer1ModalLabel">50% off to New York</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Enjoy a 50% discount on your flight to New York. Offer valid till the end of this month. Book now!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="reservation.html" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="offer2Modal" tabindex="-1" aria-labelledby="offer2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="offer2ModalLabel">Buy one get one free to London</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Purchase a ticket to London and get another ticket free. Offer valid for a limited time only.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="reservation.html" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="offer3Modal" tabindex="-1" aria-labelledby="offer3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="offer3ModalLabel">30% off to Paris</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Take advantage of a 30% discount on flights to Paris. Don't miss this chance to visit the City of Lights.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="reservation.html" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="offer4Modal" tabindex="-1" aria-labelledby="offer4ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="offer4ModalLabel">20% off to Tokyo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Fly to Tokyo with a 20% discount. Explore the vibrant culture and delicious cuisine of Japan.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="reservation.html" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Modals -->
+    <div class="modal fade" id="navHomeModal" tabindex="-1" aria-labelledby="navHomeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="navHomeModalLabel">Home</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Welcome to the Airline Reservation System. Discover our services, book flights, and enjoy exclusive offers.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="index.html" class="btn btn-primary">Go to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="navReservationModal" tabindex="-1" aria-labelledby="navReservationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="navReservationModalLabel">Reservation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Book your flights easily with our online reservation system. Choose your destination, select your dates, and secure your seats.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="reservation.html" class="btn btn-primary">Go to Reservation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="navDestinationsModal" tabindex="-1" aria-labelledby="navDestinationsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="navDestinationsModalLabel">Destinations</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Explore our top destinations around the world. Find out more about the places you can visit with our airline.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="destinations.html" class="btn btn-primary">Go to Destinations</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="navOffersModal" tabindex="-1" aria-labelledby="navOffersModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="navOffersModalLabel">Offers</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Check out our latest offers and discounts. Save on your next flight with our special deals.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="offers.html" class="btn btn-primary">Go to Offers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="navContactModal" tabindex="-1" aria-labelledby="navContactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="navContactModalLabel">Contact</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Get in touch with us for any queries or assistance. We're here to help you with your travel plans.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="contact.html" class="btn btn-primary">Go to Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="navAdminModal" tabindex="-1" aria-labelledby="navAdminModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="navAdminModalLabel">Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Admin access for managing the airline reservation system. Login to update flight schedules, offers, and more.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="admin.html" class="btn btn-primary">Go to Admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

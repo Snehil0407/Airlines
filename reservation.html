@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Airline Reservation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="logo.svg" alt="SVG Image" width="50" height="50"> Airline Express
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="reservation.html"><i class="fa-solid fa-calendar-check"></i> Reservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="map.html"><i class="fa-solid fa-map-marked-alt"></i> Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="offers.html"><i class="fa-solid fa-tags"></i> Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html"><i class="fa-solid fa-user-shield"></i> Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><i class="fa-solid fa-sign-in-alt"></i> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container mt-4">
+            <h2><i class="fa-solid fa-calendar-check"></i> Book Your Flight</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name"><i class="fa-solid fa-user"></i> Full Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fa-solid fa-envelope"></i> Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fa-solid fa-lock"></i> Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination"><i class="fa-solid fa-map-signs"></i> Destination:</label>
+                    <select class="form-control" id="destination" name="destination" required>
+                        <option value="newyork">New York</option>
+                        <option value="london">London</option>
+                        <option value="paris">Paris</option>
+                        <option value="tokyo">Tokyo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-plane"></i> Travel Class:</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="class" id="economy" value="economy" required>
+                        <label class="form-check-label" for="economy">Economy</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="class" id="business" value="business" required>
+                        <label class="form-check-label" for="business">Business</label>
+                    </div>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                    <label class="form-check-label" for="terms"><i class="fa-solid fa-check-circle"></i> I agree to the terms and conditions</label>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>&copy; 2024 Airline Reservation System. All rights reserved.</p>
+        <p>Contact us: snehil@gmail.com | Follow us on social media</p>
+        <div>
+            <a href="#" class="text-white me-3"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel"><i class="fa-solid fa-check-circle"></i> Booking Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your booking has been successfully submitted. We will contact you shortly.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-times"></i> Close</button>
+                    <button type="button" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Confirmation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Example script to show the modal on form submit
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            $('#confirmationModal').modal('show');
+        });
+    </script>
+</body>
+</html>
