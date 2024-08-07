@@ -70,8 +70,6 @@ form {
 .form-group input, .form-group select, .form-group textarea {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -87,27 +85,6 @@ form {
 .btn-primary:hover {
     background-color: #0056b3;
 }
-.about-us-content {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .about-us-content h2 {
-        font-family: 'Georgia', serif;
-        margin-bottom: 20px;
-    }
-    .about-us-content p {
-        font-size: 1.1em;
-        line-height: 1.6;
-    }
-    .bg-light {
-        background-color: #f9f9f9 !important;
-    }
-    .rounded {
-        border-radius: 10px;
-    }
-    .shadow {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
 
 @media (max-width: 768px) {
     .hero h1 {
