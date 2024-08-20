@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,7 +22,7 @@
             align-items: center;
         }
         #map {
-            height: 400px;
+            height: 600px;
             width: 100%;
             max-width: 800px;
             margin-bottom: 20px;
@@ -40,8 +41,8 @@
             <a class="navbar-brand" href="#">
                 <svg height="50" width="50" xmlns="http://www.w3.org/2000/svg">
                     <image height="50" width="50" href="logo.svg" />
-                  </svg>
-                  Airline Express
+                </svg>
+                Airline Express
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -79,7 +80,7 @@
                 </p>
             </div>
         </section>        
-        <h2>Our Location</h2>
+        <h2>Route Between Bengaluru and Delhi</h2>
         <div id="map"></div>
         <a href="https://www.google.com/maps?q=12.9352,77.6069" target="_blank" class="btn btn-primary">
             <i class="fa-solid fa-map-marked-alt"></i> Open in Google Maps
@@ -99,16 +100,31 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
     <script>
-        var map = L.map('map').setView([12.9352, 77.6069], 13);
+        var map = L.map('map').setView([20.5937, 78.9629], 5); // Center map on India
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        L.marker([12.9352, 77.6069]).addTo(map)
-            .bindPopup('Our Company Location<br>Christ (Deemed to be University), Bengaluru, India.')
+        var start = L.latLng(12.9352, 77.6069); // Bengaluru
+        var end = L.latLng(28.6139, 77.2090); // Delhi
+
+        L.Routing.control({
+            waypoints: [
+                start,
+                end
+            ],
+            routeWhileDragging: true
+        }).addTo(map);
+
+        L.marker(start).addTo(map)
+            .bindPopup('Bengaluru')
             .openPopup();
+
+        L.marker(end).addTo(map)
+            .bindPopup('Delhi');
     </script>
 </body>
 </html>
