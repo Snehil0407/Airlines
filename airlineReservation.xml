@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE airlineReservation SYSTEM "airlineReservation.dtd">
+<airlineReservation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="airlineReservation.xsd">
+<reservations>
+    <flight>
+        <flightNumber>AA101</flightNumber>
+        <airline>American Airlines</airline>
+        <destination>LAX</destination>
+        <class>Economy</class>
+        <passengerName>John Doe</passengerName>
+        <email>john.doe@example.com</email>
+    </flight>
+    <flight>
+        <flightNumber>BB202</flightNumber>
+        <airline>Delta Airlines</airline>
+        <destination>ORD</destination>
+        <class>Business</class>
+        <passengerName>Jane Smith</passengerName>
+        <email>jane.smith@example.com</email>
+    </flight>
+</reservations>
+

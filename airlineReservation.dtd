@@ -1,0 +1,8 @@
+<!ELEMENT airlineReservation (flight+)>
+<!ELEMENT flight (flightNumber, airline, destination, class, passengerName, email)>
+<!ELEMENT flightNumber (#PCDATA)>
+<!ELEMENT airline (#PCDATA)>
+<!ELEMENT destination (#PCDATA)>
+<!ELEMENT class (#PCDATA)>
+<!ELEMENT passengerName (#PCDATA)>
+<!ELEMENT email (#PCDATA)>

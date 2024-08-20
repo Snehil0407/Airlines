@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Reservation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .container-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <svg height="50" width="50" xmlns="http://www.w3.org/2000/svg">
+                    <image height="50" width="50" href="logo.svg" />
+                </svg>
+                Airline Express
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reservation.html"><i class="fa-solid fa-calendar-check"></i> Reservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="airlineReservationTable.html"><i class="fa-solid fa-calendar-check"></i> Reservation Table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="map.html"><i class="fa-solid fa-map-marked-alt"></i> About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="offers.html"><i class="fa-solid fa-tags"></i> Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html"><i class="fa-solid fa-user-shield"></i> Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><i class="fa-solid fa-sign-in-alt"></i> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container-wrapper">
+        <div class="container mt-4">
+            <h2>Airline Reservation System</h2>
+
+            <table id="reservationTable">
+                <thead>
+                    <tr>
+                        <th>Flight Number</th>
+                        <th>Airline</th>
+                        <th>Destination</th>
+                        <th>Class</th>
+                        <th>Passenger Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <script>
+                fetch('airlineReservation.xml')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const xmlDoc = parser.parseFromString(data, 'application/xml');
+                        const flights = xmlDoc.getElementsByTagName('flight');
+                    
+                        let tableBody = document.querySelector('#reservationTable tbody');
+                    
+                        // Iterate through each flight and append a row to the table
+                        for (let i = 0; i < flights.length; i++) {
+                            let row = tableBody.insertRow();
+                    
+                            let cell1 = row.insertCell(0);
+                            let cell2 = row.insertCell(1);
+                            let cell3 = row.insertCell(2);
+                            let cell4 = row.insertCell(3);
+                            let cell5 = row.insertCell(4);
+                            let cell6 = row.insertCell(5);
+                    
+                            cell1.innerHTML = flights[i].getElementsByTagName('flightNumber')[0].childNodes[0].nodeValue;
+                            cell2.innerHTML = flights[i].getElementsByTagName('airline')[0].childNodes[0].nodeValue;
+                            cell3.innerHTML = flights[i].getElementsByTagName('destination')[0].childNodes[0].nodeValue;
+                            cell4.innerHTML = flights[i].getElementsByTagName('class')[0].childNodes[0].nodeValue;
+                            cell5.innerHTML = flights[i].getElementsByTagName('passengerName')[0].childNodes[0].nodeValue;
+                            cell6.innerHTML = flights[i].getElementsByTagName('email')[0].childNodes[0].nodeValue;
+                        }
+                    })
+                    .catch(error => console.error('Error fetching XML:', error));
+            </script>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Airline Reservation System. All rights reserved.</p>
+        <p>Contact us: snehil@gmail.com | Follow us on social media</p>
+        <div>
+            <a href="#" class="text-white me-3"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
