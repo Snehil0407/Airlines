@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <!-- Bootstrap CSS and Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <header>
+        <!-- Updated Navbar with Tailwind CSS and Font Awesome -->
+<nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center">
+                    <svg height="50" width="50" xmlns="http://www.w3.org/2000/svg">
+                        <image height="50" width="50" href="logo.svg" />
+                    </svg>
+                    <span class="ml-3 text-xl font-bold text-gray-800">Airline Express</span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-600 hover:text-gray-900">
+                    <i class="fa-solid fa-house mr-2"></i> Home
+                </a>
+                <a href="reservation.html" class="text-gray-600 hover:text-gray-900">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservation
+                </a>
+                <a href="airlineReservationTable.html" class="text-gray-600 hover:text-gray-900">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservation Table
+                </a>
+                <a href="map.html" class="text-gray-600 hover:text-gray-900">
+                    <i class="fa-solid fa-map-marked-alt mr-2"></i> About Us
+                </a>
+                <a href="offers.html" class="text-gray-600 hover:text-gray-900">
+                    <i class="fa-solid fa-tags mr-2"></i> Offers
+                </a>
+                <a href="contact.html" class="text-gray-600 hover:text-gray-900">
+                    <i class="fa-solid fa-envelope mr-2"></i> Contact
+                </a>
+                <a href="signup.html" class="text-gray-600 hover:text-gray-900">
+                    <i class="fa-solid fa-right-to-bracket mr-2"></i> Sign Up
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button type="button" class="text-gray-600 hover:text-gray-900 focus:outline-none focus:text-gray-900" aria-controls="mobile-menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html" class="block text-gray-600 hover:text-gray-900">
+                <i class="fa-solid fa-house mr-2"></i>Home
+            </a>
+            <a href="reservation.html" class="block text-gray-600 hover:text-gray-900">
+                <i class="fa-solid fa-calendar-check mr-2"></i>Reservation
+            </a>
+            <a href="airlineReservationTable.html" class="block text-gray-600 hover:text-gray-900">
+                <i class="fa-solid fa-calendar-check mr-2"></i>Reservation Table
+            </a>
+            <a href="map.html" class="block text-gray-600 hover:text-gray-900">
+                <i class="fa-solid fa-map-marked-alt mr-2"></i>About Us
+            </a>
+            <a href="offers.html" class="block text-gray-600 hover:text-gray-900">
+                <i class="fa-solid fa-tags mr-2"></i>Offers
+            </a>
+            <a href="contact.html" class="block text-gray-600 hover:text-gray-900">
+                <i class="fa-solid fa-envelope mr-2"></i>Contact
+            </a>
+            <a href="signup.html" class="block text-gray-600 hover:text-gray-900">
+                <i class="fa-solid fa-right-to-bracket mr-2"></i>Sign Up
+            </a>
+        </div>
+    </div>
+</nav>
+
+    </header>
+
+    <!-- Main Content: Login/Sign Up Forms -->
+    <main class="flex-grow flex items-center justify-center">
+        <div class="bg-white p-8 rounded shadow-md w-full max-w-md my-6">
+            <h2 id="formTitle" class="text-2xl font-bold mb-6 text-center">Sign Up</h2>
+
+            <!-- Sign Up Form -->
+            <form id="signupForm" class="form" novalidate>
+                <!-- Name Field -->
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Name</label>
+                    <input type="text" id="name" class="border-2 w-full p-2 mt-1 rounded focus:outline-none" placeholder="Enter your name">
+                    <span id="nameError" class="text-red-500 text-sm"></span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" id="email" class="border-2 w-full p-2 mt-1 rounded focus:outline-none" placeholder="Enter your email">
+                    <span id="emailError" class="text-red-500 text-sm"></span>
+                </div>
+
+                <!-- Password Field -->
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-700">Password</label>
+                    <input type="password" id="password" class="border-2 w-full p-2 mt-1 rounded focus:outline-none" placeholder="Enter your password">
+                    <span id="passwordError" class="text-red-500 text-sm"></span>
+                </div>
+
+                <!-- Confirm Password Field -->
+                <div class="mb-4">
+                    <label for="confirmPassword" class="block text-gray-700">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="border-2 w-full p-2 mt-1 rounded focus:outline-none" placeholder="Confirm your password">
+                    <span id="confirmPasswordError" class="text-red-500 text-sm"></span>
+                </div>
+
+                <!-- Date of Birth Field -->
+                <div class="mb-4">
+                    <label for="dob" class="block text-gray-700">Date of Birth</label>
+                    <input type="date" id="dob" class="border-2 w-full p-2 mt-1 rounded focus:outline-none">
+                    <span id="dobError" class="text-red-500 text-sm"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="bg-blue-500 text-white w-full p-2 rounded hover:bg-blue-600 disabled:opacity-50" id="submitButton" disabled>Sign Up</button>
+            </form>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="form hidden" novalidate>
+                <!-- Username Field -->
+                <div class="mb-4">
+                    <label for="username" class="block text-gray-700">Username</label>
+                    <input type="text" id="username" class="border-2 w-full p-2 mt-1 rounded focus:outline-none" placeholder="Enter your username">
+                    <span id="usernameError" class="text-red-500 text-sm"></span>
+                </div>
+
+                <!-- Password Field -->
+                <div class="mb-4">
+                    <label for="loginPassword" class="block text-gray-700">Password</label>
+                    <input type="password" id="loginPassword" class="border-2 w-full p-2 mt-1 rounded focus:outline-none" placeholder="Enter your password">
+                    <span id="loginPasswordError" class="text-red-500 text-sm"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="bg-blue-500 text-white w-full p-2 rounded hover:bg-blue-600" id="loginSubmitButton">Log In</button>
+            </form>
+
+            <!-- Switch Button -->
+            <button id="switchButton" class="text-blue-500 mt-4 w-full hover:underline">Already Have a Account? Log in</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+  <!-- Footer with Tailwind CSS and Font Awesome -->
+<footer class="bg-gray-800 text-white text-center py-6">
+    <p class="text-sm mb-2">&copy; 2024 Airline Reservation System. All rights reserved.</p>
+    <p class="text-sm mb-4">Contact us: <a href="mailto:snehil@gmail.com" class="text-blue-400 hover:underline">snehil@gmail.com</a> | Follow us on social media</p>
+    <div class="flex justify-center space-x-4">
+        <a href="#" class="text-white hover:text-gray-400">
+            <i class="fa-brands fa-facebook-f text-xl"></i>
+        </a>
+        <a href="#" class="text-white hover:text-gray-400">
+            <i class="fa-brands fa-twitter text-xl"></i>
+        </a>
+        <a href="#" class="text-white hover:text-gray-400">
+            <i class="fa-brands fa-instagram text-xl"></i>
+        </a>
+    </div>
+</footer>
+
+
+    <!-- JavaScript for Bootstrap and Form Validation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Switching between Login and Sign Up forms
+        const signupForm = document.getElementById('signupForm');
+        const loginForm = document.getElementById('loginForm');
+        const switchButton = document.getElementById('switchButton');
+        const formTitle = document.getElementById('formTitle');
+        const submitButton = document.getElementById('submitButton');
+
+        switchButton.addEventListener('click', () => {
+            if (signupForm.classList.contains('hidden')) {
+                signupForm.classList.remove('hidden');
+                loginForm.classList.add('hidden');
+                formTitle.textContent = 'Sign Up';
+                switchButton.textContent = 'Switch to Log In';
+            } else {
+                signupForm.classList.add('hidden');
+                loginForm.classList.remove('hidden');
+                formTitle.textContent = 'Log In';
+                switchButton.textContent = 'Switch to Sign Up';
+            }
+        });
+
+        // Validation function for Sign Up
+        function validateSignUpForm() {
+            let isValid = true;
+
+            // Name Validation
+            const name = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            const nameRegex = /^[A-Za-z\s]{3,}$/;
+            if (!nameRegex.test(name.value)) {
+                nameError.textContent = 'Name must be at least 3 characters long and contain only letters and spaces.';
+                name.classList.add('border-red-500');
+                name.classList.remove('border-green-500');
+                isValid = false;
+            } else {
+                nameError.textContent = '';
+                name.classList.add('border-green-500');
+                name.classList.remove('border-red-500');
+            }
+
+            // Email Validation
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                email.classList.add('border-red-500');
+                email.classList.remove('border-green-500');
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+                email.classList.add('border-green-500');
+                email.classList.remove('border-red-500');
+            }
+
+            // Password Validation
+            const password = document.getElementById('password');
+            const passwordError = document.getElementById('passwordError');
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            if (!passwordRegex.test(password.value)) {
+                passwordError.textContent = 'Password must be at least 8 characters long and contain both letters and numbers.';
+                password.classList.add('border-red-500');
+                password.classList.remove('border-green-500');
+                isValid = false;
+            } else {
+                passwordError.textContent = '';
+                password.classList.add('border-green-500');
+                password.classList.remove('border-red-500');
+            }
+
+            // Confirm Password Validation
+            const confirmPassword = document.getElementById('confirmPassword');
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+            if (confirmPassword.value !== password.value) {
+                confirmPasswordError.textContent = 'Passwords do not match.';
+                confirmPassword.classList.add('border-red-500');
+                confirmPassword.classList.remove('border-green-500');
+                isValid = false;
+            } else {
+                confirmPasswordError.textContent = '';
+                confirmPassword.classList.add('border-green-500');
+                confirmPassword.classList.remove('border-red-500');
+            }
+
+            // Date of Birth Validation
+            const dob = document.getElementById('dob');
+            const dobError = document.getElementById('dobError');
+            const dobValue = dob.value;
+            if (!dobValue) {
+                dobError.textContent = 'Date of Birth is required.';
+                dob.classList.add('border-red-500');
+                dob.classList.remove('border-green-500');
+                isValid = false;
+            } else {
+                const today = new Date();
+                const birthDate = new Date(dobValue);
+                let age = today.getFullYear() - birthDate.getFullYear();
+                const monthDifference = today.getMonth() - birthDate.getMonth();
+                if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                if (age < 18) {
+                    dobError.textContent = 'You must be at least 18 years old.';
+                    dob.classList.add('border-red-500');
+                    dob.classList.remove('border-green-500');
+                    isValid = false;
+                } else {
+                    dobError.textContent = '';
+                    dob.classList.add('border-green-500');
+                    dob.classList.remove('border-red-500');
+                }
+            }
+
+            // Enable or disable the submit button based on form validity
+            submitButton.disabled = !isValid;
+            return isValid;
+        }
+
+        // Validation function for Login
+        function validateLoginForm() {
+            let isValid = true;
+
+            // Username Validation
+            const username = document.getElementById('username');
+            const usernameError = document.getElementById('usernameError');
+            if (username.value.trim() === '') {
+                usernameError.textContent = 'Username cannot be empty.';
+                username.classList.add('border-red-500');
+                username.classList.remove('border-green-500');
+                isValid = false;
+            } else {
+                usernameError.textContent = '';
+                username.classList.add('border-green-500');
+                username.classList.remove('border-red-500');
+            }
+
+            // Password Validation
+            const loginPassword = document.getElementById('loginPassword');
+            const loginPasswordError = document.getElementById('loginPasswordError');
+            if (loginPassword.value.trim() === '') {
+                loginPasswordError.textContent = 'Password cannot be empty.';
+                loginPassword.classList.add('border-red-500');
+                loginPassword.classList.remove('border-green-500');
+                isValid = false;
+            } else {
+                loginPasswordError.textContent = '';
+                loginPassword.classList.add('border-green-500');
+                loginPassword.classList.remove('border-red-500');
+            }
+
+            return isValid;
+        }
+
+        // Form submission handlers
+        signupForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (validateSignUpForm()) {
+                alert('Sign Up form submitted successfully!');
+            }
+        });
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (validateLoginForm()) {
+                alert('Login form submitted successfully!');
+            }
+        });
+
+        // Real-time feedback for Sign Up inputs
+        document.querySelectorAll('#signupForm input').forEach(input => {
+            input.addEventListener('input', validateSignUpForm);
+        });
+
+        // Real-time feedback for Login inputs
+        document.querySelectorAll('#loginForm input').forEach(input => {
+            input.addEventListener('input', validateLoginForm);
+        });
+    </script>
+</body>
+</html>
