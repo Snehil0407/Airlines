@@ -10,15 +10,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
         .container-wrapper {
             flex: 1;
-            display: flex;
-            flex-direction: column;
         }
         .container {
             max-width: 800px;
@@ -40,6 +38,30 @@
             text-align: center;
             padding: 10px;
             margin-top: auto;
+            width: 100%;
+        }
+        nav {
+            width: 100%;
+        }
+        .navbar {
+            width: 100%;
+        }
+        .navbar-brand svg {
+            vertical-align: middle;
+        }
+        .navbar-nav {
+            width: 100%;
+            justify-content: flex-end;
+        }
+        .navbar-toggler {
+            border: none;
+        }
+        .nav-link {
+            font-size: 16px;
+            margin-right: 15px;
+        }
+        .nav-item:last-child .nav-link {
+            margin-right: 0;
         }
     </style>
 </head>
@@ -48,7 +70,7 @@
     <!-- Navigation Bar -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="#">
                 <svg height="50" width="50" xmlns="http://www.w3.org/2000/svg">
                     <image height="50" width="50" href="logo.svg" />
                 </svg>
@@ -59,7 +81,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
                     <li class="nav-item">
@@ -77,8 +99,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
                     </li>
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="api.html"><i class="fas fa-check-circle"></i> fetch using api</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="api.html"><i class="fas fa-check-circle"></i> Fetch using API</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="signup.html"><i class="fa-solid fa-right-to-bracket"></i> Sign Up/Log in</a>
@@ -122,7 +144,7 @@
         </div>
     </footer>
 
-    <script src="app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
