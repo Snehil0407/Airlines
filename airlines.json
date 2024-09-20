@@ -1,0 +1,9 @@
+[
+    { "name": "American Airlines", "country": "USA", "rating": 4.5 },
+    { "name": "Emirates", "country": "UAE", "rating": 4.8 },
+    { "name": "Qatar Airways", "country": "Qatar", "rating": 4.7 },
+    { "name": "Lufthansa", "country": "Germany", "rating": 4.2 },
+    { "name": "Singapore Airlines", "country": "Singapore", "rating": 4.9 },
+    { "name": "Air India", "country": "India", "rating": 3.8 },
+    { "name": "British Airways", "country": "UK", "rating": 4.3 }
+]
