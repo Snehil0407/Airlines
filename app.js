@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fetchAirlines() {
-    showLoadingSpinner(); // Show a loading spinner while fetching data
+    showLoadingSpinner(); 
 
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "airlines.json", true); // Change to API URL if using live data
+    xhr.open("GET", "airlines.json", true); 
     xhr.onload = function () {
         hideLoadingSpinner();
         if (xhr.status === 200) {
