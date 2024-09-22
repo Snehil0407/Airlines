@@ -21,16 +21,52 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        #sort-options,
+        #filter-input {
+            margin-bottom: 20px;
+        }
+        #airlines-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px; /* Space between items */
         }
         #airlines-container div {
+            flex: 1 1 calc(50% - 15px); /* Two items per row with gap */
+            background-color: rgba(255, 255, 255, 0.8); /* Opaque background */
             border: 1px solid #ccc;
-            padding: 10px;
-            margin: 5px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        #airlines-container div:hover {
+            transform: scale(1.02);
+        }
+        #pagination-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
         }
         #pagination-controls button {
-            margin: 5px;
-            padding: 5px 10px;
+            margin: 0 5px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #pagination-controls button:hover {
+            background-color: #0056b3;
         }
         footer {
             background-color: #000;
@@ -100,7 +136,7 @@
                         <a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="api.html"><i class="fas fa-check-circle"></i>API</a>
+                        <a class="nav-link" href="api.html"><i class="fas fa-check-circle"></i> API</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="signup.html"><i class="fa-solid fa-right-to-bracket"></i> Sign Up/Log in</a>
